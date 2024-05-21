@@ -14,7 +14,11 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: Drawer(
-          child: Text("Drawer Data"),
+          child: SafeArea(
+              child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text("Hello"),
+          )),
         ),
         appBar: AppBar(
           actions: [

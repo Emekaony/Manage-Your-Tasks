@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -24,9 +24,14 @@ class _MainScreenState extends State<MainScreen> {
           actions: [
             Padding(
               padding: EdgeInsets.only(right: 10),
-              child: Icon(
-                Icons.add,
-                color: Colors.red,
+              child: InkWell(
+                onTap: () {
+                  print("Plus button is tappes");
+                },
+                child: Icon(
+                  Icons.add,
+                  color: Colors.red,
+                ),
               ),
             ),
           ],

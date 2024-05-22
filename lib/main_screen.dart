@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:todo_app/add_todo.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -25,8 +26,21 @@ class _MainScreenState extends State<MainScreen> {
             Padding(
               padding: EdgeInsets.only(right: 10),
               child: InkWell(
+                enableFeedback: false,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () {
-                  print("Plus button is tappes");
+                  showModalBottomSheet(
+                      backgroundColor: Colors.green[100],
+                      context: context,
+                      // so when I see builder, I should know that the current context should be in parenthesis
+                      builder: (context) {
+                        return Container(
+                          padding: EdgeInsets.all(20),
+                          height: 250,
+                          child: AddTodo(),
+                        );
+                      });
                 },
                 child: Icon(
                   Icons.add,
@@ -38,9 +52,6 @@ class _MainScreenState extends State<MainScreen> {
           title: const Text("Task Manager"),
           centerTitle: true,
         ),
-        body: Container(
-          padding: EdgeInsets.only(left: 24, right: 24),
-          child: const Text("Task Manager"),
-        ));
+        body: Container());
   }
 }

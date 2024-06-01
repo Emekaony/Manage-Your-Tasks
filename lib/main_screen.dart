@@ -44,7 +44,6 @@ class _MainScreenState extends State<MainScreen> {
                 },
                 child: Icon(
                   Icons.add,
-                  color: Colors.red,
                 ),
               ),
             ),
